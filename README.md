@@ -30,7 +30,7 @@ Please replace with api key got from registering on the website.
 
 3. Usage
 ```javascript
-import SessionFoxRN from 'sessionfox-rn';
+import SessionFoxRN from 'sessionfox-rn-sdk';
 
 // Call the init function in your App.js render()
 SessionFoxRN.init();
