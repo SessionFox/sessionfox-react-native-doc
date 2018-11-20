@@ -1,10 +1,10 @@
 ### Getting started
 
-`$ npm install sessionfox-rn --save`
+`$ npm install sessionfox-rn-sdk --save`
 
 ### Mostly automatic installation
 
-`$ react-native link sessionfox-rn`
+`$ react-native link sessionfox-rn-sdk`
 
 ### Including library in Android project
 
