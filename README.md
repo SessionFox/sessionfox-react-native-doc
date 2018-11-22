@@ -1,6 +1,6 @@
 ### Getting started
 
-````
+```
 $ npm install sessionfox-rn-sdk --save
 $ react-native link sessionfox-rn-sdk
 ```
