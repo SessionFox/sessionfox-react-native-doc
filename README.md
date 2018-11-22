@@ -1,14 +1,14 @@
 ### Getting started
 
-`$ npm install sessionfox-rn-sdk --save`
-
-### Mostly automatic installation
-
-`$ react-native link sessionfox-rn-sdk`
+````
+$ npm install sessionfox-rn-sdk --save
+$ react-native link sessionfox-rn-sdk
+```
 
 ### Including library in Android project
 
-1. In the build.gradle inside your android folder, add following inside allprojects.repositories
+#### Step 1
+In the build.gradle inside your android folder, add following inside allprojects.repositories
 ```
 allprojects {
     repositories {
@@ -22,19 +22,47 @@ allprojects {
 ```
 Note: If your gradle version is below 3.0.0, you will have to upgrade gradle inside the above file to 3.0.0 version in your <Project>and sync project in Android Studio.
 
-2. Add the line to your android/app/src/main/AndroidManifest.xml
-``` 
+#### Step 2
+Add the line to your android/app/src/main/AndroidManifest.xml
+```
 <meta-data android:name="SESSION_FOX_API_KEY" android:value="<your-api-key>" />
 ```
 Please replace with api key got from registering on the website.
 
-3. Usage
+#### Step 3
+In the Main application class within android/app folder, import these packages if not already present
+```java
+import com.sessionfoxrn.SessionFoxRNPackage;
+import com.sessionfox.sdk.SessionFox;
+```
+Once imported, make sure `getPackages()` method has `new SessionFoxRNPackage()` added to it.
+
+Example:
+
+```java
+@Override
+protected List<ReactPackage> getPackages() {
+  return Arrays.<ReactPackage>asList(
+      new SomeOtherPackage(),
+      new SessionFoxRNPackage()
+  );
+}
+```
+Once this is done, in the `onCreate()` method of the application, add ```SessionFox.init()```.
+
+Example:
+```java
+@Override
+public void onCreate() {
+  super.onCreate();
+  SessionFox.init(this);
+}
+```
+
+Thats it! you are now ready to use SessionFox
+
+### Usage
 ```javascript
-import SessionFoxRN from 'sessionfox-rn-sdk';
-
-// Call the init function in your App.js render()
-SessionFoxRN.init();
-
 // Tag screen name visited
 SessionFoxRN.tagScreenName('com.sample.CheckoutScreen');
 
@@ -50,5 +78,3 @@ SessionFoxRN.sendEvent('purchase',{
   card: 'hdfc',
 });
 ```
-  
-
