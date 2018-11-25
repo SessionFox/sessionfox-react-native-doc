@@ -22,6 +22,16 @@ allprojects {
 ```
 Note: If your gradle version is below 3.0.0, you will have to upgrade gradle. Inside the above file change version to 3.2.0 in your Project and sync project in Android Studio. Once the sync is complete, you can ignore the other errors in android studio and move on to the next step.
 
+In the build.gradle inside android/app folder, please add the below lines, so that it is java 1.8 compatible
+```java
+android {
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+```
+
 #### Step 2
 Add the line to your android/app/src/main/AndroidManifest.xml
 ```
