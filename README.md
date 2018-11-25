@@ -45,7 +45,7 @@ In the Main application class within android/app folder, import these packages i
 import com.sessionfoxrn.SessionFoxRNPackage;
 import com.sessionfox.sdk.SessionFox;
 ```
-Once imported, make sure `getPackages()` method has `new SessionFoxRNPackage()` added to it.
+Make sure that your Application class implements the `ReactApplication` interface and `getPackages()` method has `new SessionFoxRNPackage()` added to it.
 
 Example:
 
