@@ -15,12 +15,12 @@ allprojects {
         google()
         jcenter()
         maven {
-            url "https://mymavenrepo.com/repo/PENxspKoeuoFCKp9veSD/"
+            url "https://mymavenrepo.com/repo/EpCerWf2f0TbbXSSpgLb/"
         }
     }
 }
 ```
-Note: If your gradle version is below 3.0.0, you will have to upgrade gradle inside the above file to 3.0.0 version in your <Project>and sync project in Android Studio.
+Note: If your gradle version is below 3.0.0, you will have to upgrade gradle. Inside the above file change version to 3.2.0 in your Project and sync project in Android Studio. Once the sync is complete, you can ignore the other errors in android studio and move on to the next step.
 
 #### Step 2
 Add the line to your android/app/src/main/AndroidManifest.xml
