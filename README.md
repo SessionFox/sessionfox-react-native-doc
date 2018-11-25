@@ -88,3 +88,21 @@ SessionFoxRN.sendEvent('purchase',{
   card: 'hdfc',
 });
 ```
+
+### Using Proguard with the SessionFox SDK
+If your app is proguarded, you may notice some errors at the time of making a release apk. If this happens, add the following lines to the end of your proguard-rules.pro
+```
+# Class names are needed in reflection
+-keepnames class com.amazonaws.**
+-keepnames class com.amazon.**
+# Request handlers defined in request.handlers
+-keep class com.amazonaws.services.**.*Handler
+# The following are referenced but aren't required to run
+-dontwarn com.fasterxml.jackson.**
+-dontwarn org.apache.commons.logging.**
+# Android 6.0 release removes support for the Apache HTTP client
+-dontwarn org.apache.http.**
+# The SDK has several references of Apache HTTP client
+-dontwarn com.amazonaws.http.**
+-dontwarn com.amazonaws.metrics.**
+```
