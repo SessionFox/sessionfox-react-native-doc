@@ -87,6 +87,12 @@ SessionFoxRN.sendEvent('purchase',{
   amount: '30',
   card: 'hdfc',
 });
+
+// Report an issue
+SessionFoxRN.reportIssue('I am not able to do so and so',{
+  name: 'John Doe',
+  email: 'johndoe@gmail.com',
+});
 ```
 
 ### Using Proguard with the SessionFox SDK
