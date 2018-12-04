@@ -73,6 +73,9 @@ Thats it! you are now ready to use SessionFox
 
 ### Usage
 ```javascript
+// import sessionfox
+import SessionFoxRN from 'sessionfox-rn-sdk'
+
 // Tag screen name visited
 SessionFoxRN.tagScreenName('com.sample.CheckoutScreen');
 
